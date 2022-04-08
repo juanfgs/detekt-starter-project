@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="4.3">
+<file name="/home/juanfgs/src/kotlin/starter/app/src/main/java/com/raywenderlich/android/detektsampleapp/RulesWebViewActivity.kt">
+	<error line="49" column="9" severity="warning" message="Variable names should match the pattern: [a-z][A-Za-z0-9]*" source="detekt.VariableNaming" />
+	<error line="35" column="1" severity="warning" message="The file /home/juanfgs/src/kotlin/starter/app/src/main/java/com/raywenderlich/android/detektsampleapp/RulesWebViewActivity.kt is not ending with a new line." source="detekt.NewLineAtEndOfFile" />
+</file>
+<file name="/home/juanfgs/src/kotlin/starter/app/src/main/java/com/raywenderlich/android/detektsampleapp/SyntheticRuleActivity.kt">
+	<error line="35" column="1" severity="warning" message="The file /home/juanfgs/src/kotlin/starter/app/src/main/java/com/raywenderlich/android/detektsampleapp/SyntheticRuleActivity.kt is not ending with a new line." source="detekt.NewLineAtEndOfFile" />
+</file>
+<file name="/home/juanfgs/src/kotlin/starter/app/src/main/java/com/raywenderlich/android/detektsampleapp/RulesAdapter.kt">
+	<error line="35" column="1" severity="warning" message="The file /home/juanfgs/src/kotlin/starter/app/src/main/java/com/raywenderlich/android/detektsampleapp/RulesAdapter.kt is not ending with a new line." source="detekt.NewLineAtEndOfFile" />
+	<error line="46" column="1" severity="warning" message="Line detected that is longer than the defined maximum line length in the code style." source="detekt.MaxLineLength" />
+	<error line="48" column="3" severity="warning" message="Line detected that is longer than the defined maximum line length in the code style." source="detekt.MaxLineLength" />
+</file>
+<file name="/home/juanfgs/src/kotlin/starter/app/src/main/java/com/raywenderlich/android/detektsampleapp/DetektRules.kt">
+	<error line="35" column="1" severity="warning" message="The file /home/juanfgs/src/kotlin/starter/app/src/main/java/com/raywenderlich/android/detektsampleapp/DetektRules.kt is not ending with a new line." source="detekt.NewLineAtEndOfFile" />
+	<error line="38" column="5" severity="warning" message="Line detected that is longer than the defined maximum line length in the code style." source="detekt.MaxLineLength" />
+	<error line="39" column="5" severity="warning" message="Line detected that is longer than the defined maximum line length in the code style." source="detekt.MaxLineLength" />
+	<error line="40" column="5" severity="warning" message="Line detected that is longer than the defined maximum line length in the code style." source="detekt.MaxLineLength" />
+	<error line="41" column="5" severity="warning" message="Line detected that is longer than the defined maximum line length in the code style." source="detekt.MaxLineLength" />
+	<error line="42" column="5" severity="warning" message="Line detected that is longer than the defined maximum line length in the code style." source="detekt.MaxLineLength" />
+	<error line="43" column="5" severity="warning" message="Line detected that is longer than the defined maximum line length in the code style." source="detekt.MaxLineLength" />
+	<error line="44" column="5" severity="warning" message="Line detected that is longer than the defined maximum line length in the code style." source="detekt.MaxLineLength" />
+	<error line="45" column="5" severity="warning" message="Line detected that is longer than the defined maximum line length in the code style." source="detekt.MaxLineLength" />
+	<error line="46" column="5" severity="warning" message="Line detected that is longer than the defined maximum line length in the code style." source="detekt.MaxLineLength" />
+	<error line="47" column="5" severity="warning" message="Line detected that is longer than the defined maximum line length in the code style." source="detekt.MaxLineLength" />
+</file>
+</checkstyle>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>detekt report</title>
+    <style>
+h2 {
+  background-color: #666666;
+  padding: 0.2em;
+  color: #ffffff;
+}
+h3 {
+  background-color:#f8dfdf;
+  padding:0.5em;
+}
+.rule {
+  background-color: #dddddd;
+  padding: 0.3em;
+  font-weight: bold;
+}
+.description {
+  color:#000000;
+  padding:0.3em;
+}
+.location {
+  color: #690505;
+  font-family: monospace;
+  display: block;
+}
+.message {
+  font-size: 0.8em;
+  color: #444444;
+  display: block;
+  margin-top: 1pt;
+}
+.rule-container {
+  border: 0.1em dashed #dddddd;
+  padding: 0.1em;
+  line-height: 1.5em;
+  margin-bottom: 8px;
+  margin-top: 8px;
+}
+pre {
+  border: 1px solid #e0e0e0;
+  overflow: scroll;
+}
+.lineno {
+  color: #999999;
+  background-color: #f0f0f0;
+}
+.error {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4AwCFR4T/3uLMgAAADxJREFUCNdNyLERQEAABMCjL4lQwIzcjErpguAL+C9AvgKJDbeD/PRpLdm35Hm+MU+cB+tCKaJW4L4YBy+CAiLJrFs9mgAAAABJRU5ErkJggg==) bottom repeat-x;
+}
+.exception {
+  color: #b60808;
+  display: inline-block;
+  background-color: #ecdada;
+  border-color: #b60808;
+  border-radius: 10px;
+  border: solid 2px;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-bottom: 16px;
+}
+</style>
+</head>
+<body>
+
+<h1>detekt report</h1>
+
+<h2>Metrics</h2>
+
+<div>
+  <ul>
+    <li>7 number of properties</li>
+    <li>11 number of functions</li>
+    <li>6 number of classes</li>
+    <li>1 number of packages</li>
+    <li>6 number of kt files</li>
+  </ul>
+</div>
+
+
+<h2>Complexity Report</h2>
+
+<div>
+  <ul>
+    <li>367 lines of code (loc)</li>
+    <li>118 source lines of code (sloc)</li>
+    <li>68 logical lines of code (lloc)</li>
+    <li>205 comment lines of code (cloc)</li>
+    <li>12 cyclomatic complexity (mcc)</li>
+    <li>0 cognitive complexity</li>
+    <li>17 number of total code smells</li>
+    <li>173% comment source ratio</li>
+    <li>176 mcc per 1,000 lloc</li>
+    <li>250 code smells per 1,000 lloc</li>
+  </ul>
+</div>
+
+
+<h2>Findings</h2>
+<div>Total: 17
+  <h3>naming: 1</h3>
+  <details id="VariableNaming" open="open">
+    <summary class="rule-container"><span class="rule">VariableNaming: 1 </span><span class="description">Variable names should follow the naming convention set in the projects configuration.</span></summary>
+    <ul>
+      <li><span class="location">/home/juanfgs/src/kotlin/starter/app/src/main/java/com/raywenderlich/android/detektsampleapp/RulesWebViewActivity.kt:49:9</span><span class="message">Variable names should match the pattern: [a-z][A-Za-z0-9]*</span>
+        <pre><code><span class="lineno">  46 </span>    super.onCreate(savedInstanceState)
+<span class="lineno">  47 </span>    binding = ActivityRulesWebViewBinding.inflate(layoutInflater)
+<span class="lineno">  48 </span>    setContentView(binding.root)
+<span class="lineno">  49 </span>    val <span class="error">RulesUrl</span> = intent.getStringExtra(&quot;rulesUrl&quot;)
+<span class="lineno">  50 </span>
+<span class="lineno">  51 </span>    val webView: WebView = binding.webView
+<span class="lineno">  52 </span>    RulesUrl?.let { webView.loadUrl(it) }
+</code></pre>
+      </li>
+    </ul>
+  </details>
+  <h3>style: 16</h3>
+  <details id="MaxLineLength" open="open">
+    <summary class="rule-container"><span class="rule">MaxLineLength: 12 </span><span class="description">Line detected that is longer than the defined maximum line length in the code style.</span></summary>
+    <ul>
+      <li><span class="location">/home/juanfgs/src/kotlin/starter/app/src/main/java/com/raywenderlich/android/detektsampleapp/DetektRules.kt:38:5</span><span class="message">Line detected that is longer than the defined maximum line length in the code style.</span>
+        <pre><code><span class="lineno">  35 </span>package com.raywenderlich.android.detektsampleapp
+<span class="lineno">  36 </span>
+<span class="lineno">  37 </span>val detektRules = listOf(
+<span class="lineno">  38 </span>    <span class="error">RulesModel(&quot;Comments&quot;, &quot;This rule set provides rules that address issues in comments and documentation of the code&quot;, &quot;https://detekt.github.io/detekt/comments.html&quot;)</span>,
+<span class="lineno">  39 </span>    RulesModel(&quot;Complexity&quot;, &quot;This rule set contains rules that report complex code&quot;, &quot;https://detekt.github.io/detekt/complexity.html&quot;),
+<span class="lineno">  40 </span>    RulesModel(&quot;Coroutines&quot;, &quot;The coroutines rule set analyzes code for potential coroutines problems.&quot;, &quot;https://detekt.github.io/detekt/coroutines.html&quot;),
+<span class="lineno">  41 </span>    RulesModel(&quot;Empty-Blocks&quot;, &quot;The empty-blocks ruleset contains rules that will report empty blocks of code which should be avoided.&quot;,&quot;https://detekt.github.io/detekt/empty-blocks.html&quot;),
+</code></pre>
+      </li>
+      <li><span class="location">/home/juanfgs/src/kotlin/starter/app/src/main/java/com/raywenderlich/android/detektsampleapp/DetektRules.kt:39:5</span><span class="message">Line detected that is longer than the defined maximum line length in the code style.</span>
+        <pre><code><span class="lineno">  36 </span>
+<span class="lineno">  37 </span>val detektRules = listOf(
+<span class="lineno">  38 </span>    RulesModel(&quot;Comments&quot;, &quot;This rule set provides rules that address issues in comments and documentation of the code&quot;, &quot;https://detekt.github.io/detekt/comments.html&quot;),
+<span class="lineno">  39 </span>    <span class="error">RulesModel(&quot;Complexity&quot;, &quot;This rule set contains rules that report complex code&quot;, &quot;https://detekt.github.io/detekt/complexity.html&quot;)</span>,
+<span class="lineno">  40 </span>    RulesModel(&quot;Coroutines&quot;, &quot;The coroutines rule set analyzes code for potential coroutines problems.&quot;, &quot;https://detekt.github.io/detekt/coroutines.html&quot;),
+<span class="lineno">  41 </span>    RulesModel(&quot;Empty-Blocks&quot;, &quot;The empty-blocks ruleset contains rules that will report empty blocks of code which should be avoided.&quot;,&quot;https://detekt.github.io/detekt/empty-blocks.html&quot;),
+<span class="lineno">  42 </span>    RulesModel(&quot;Exceptions&quot;, &quot;Rules in this rule set report issues related to how code throws and handles Exceptions&quot;, &quot;https://detekt.github.io/detekt/exceptions.html&quot;),
+</code></pre>
+      </li>
+      <li><span class="location">/home/juanfgs/src/kotlin/starter/app/src/main/java/com/raywenderlich/android/detektsampleapp/DetektRules.kt:40:5</span><span class="message">Line detected that is longer than the defined maximum line length in the code style.</span>
+        <pre><code><span class="lineno">  37 </span>val detektRules = listOf(
+<span class="lineno">  38 </span>    RulesModel(&quot;Comments&quot;, &quot;This rule set provides rules that address issues in comments and documentation of the code&quot;, &quot;https://detekt.github.io/detekt/comments.html&quot;),
+<span class="lineno">  39 </span>    RulesModel(&quot;Complexity&quot;, &quot;This rule set contains rules that report complex code&quot;, &quot;https://detekt.github.io/detekt/complexity.html&quot;),
+<span class="lineno">  40 </span>    <span class="error">RulesModel(&quot;Coroutines&quot;, &quot;The coroutines rule set analyzes code for potential coroutines problems.&quot;, &quot;https://detekt.github.io/detekt/coroutines.html&quot;)</span>,
+<span class="lineno">  41 </span>    RulesModel(&quot;Empty-Blocks&quot;, &quot;The empty-blocks ruleset contains rules that will report empty blocks of code which should be avoided.&quot;,&quot;https://detekt.github.io/detekt/empty-blocks.html&quot;),
+<span class="lineno">  42 </span>    RulesModel(&quot;Exceptions&quot;, &quot;Rules in this rule set report issues related to how code throws and handles Exceptions&quot;, &quot;https://detekt.github.io/detekt/exceptions.html&quot;),
+<span class="lineno">  43 </span>    RulesModel(&quot;Formatting&quot;, &quot;This rule set provides wrappers for rules implemented by ktlint - https://ktlint.github.io/.e&quot;,&quot;https://detekt.github.io/detekt/formatting.html&quot;),
+</code></pre>
+      </li>
+      <li><span class="location">/home/juanfgs/src/kotlin/starter/app/src/main/java/com/raywenderlich/android/detektsampleapp/DetektRules.kt:41:5</span><span class="message">Line detected that is longer than the defined maximum line length in the code style.</span>
+        <pre><code><span class="lineno">  38 </span>    RulesModel(&quot;Comments&quot;, &quot;This rule set provides rules that address issues in comments and documentation of the code&quot;, &quot;https://detekt.github.io/detekt/comments.html&quot;),
+<span class="lineno">  39 </span>    RulesModel(&quot;Complexity&quot;, &quot;This rule set contains rules that report complex code&quot;, &quot;https://detekt.github.io/detekt/complexity.html&quot;),
+<span class="lineno">  40 </span>    RulesModel(&quot;Coroutines&quot;, &quot;The coroutines rule set analyzes code for potential coroutines problems.&quot;, &quot;https://detekt.github.io/detekt/coroutines.html&quot;),
+<span class="lineno">  41 </span>    <span class="error">RulesModel(&quot;Empty-Blocks&quot;, &quot;The empty-blocks ruleset contains rules that will report empty blocks of code which should be avoided.&quot;,&quot;https://detekt.github.io/detekt/empty-blocks.html&quot;)</span>,
+<span class="lineno">  42 </span>    RulesModel(&quot;Exceptions&quot;, &quot;Rules in this rule set report issues related to how code throws and handles Exceptions&quot;, &quot;https://detekt.github.io/detekt/exceptions.html&quot;),
+<span class="lineno">  43 </span>    RulesModel(&quot;Formatting&quot;, &quot;This rule set provides wrappers for rules implemented by ktlint - https://ktlint.github.io/.e&quot;,&quot;https://detekt.github.io/detekt/formatting.html&quot;),
+<span class="lineno">  44 </span>    RulesModel(&quot;Naming&quot;, &quot;The naming ruleset contains rules which assert the naming of different parts of the codebase.&quot;, &quot;https://detekt.github.io/detekt/naming.html&quot;),
+</code></pre>
+      </li>
+      <li><span class="location">/home/juanfgs/src/kotlin/starter/app/src/main/java/com/raywenderlich/android/detektsampleapp/DetektRules.kt:42:5</span><span class="message">Line detected that is longer than the defined maximum line length in the code style.</span>
+        <pre><code><span class="lineno">  39 </span>    RulesModel(&quot;Complexity&quot;, &quot;This rule set contains rules that report complex code&quot;, &quot;https://detekt.github.io/detekt/complexity.html&quot;),
+<span class="lineno">  40 </span>    RulesModel(&quot;Coroutines&quot;, &quot;The coroutines rule set analyzes code for potential coroutines problems.&quot;, &quot;https://detekt.github.io/detekt/coroutines.html&quot;),
+<span class="lineno">  41 </span>    RulesModel(&quot;Empty-Blocks&quot;, &quot;The empty-blocks ruleset contains rules that will report empty blocks of code which should be avoided.&quot;,&quot;https://detekt.github.io/detekt/empty-blocks.html&quot;),
+<span class="lineno">  42 </span>    <span class="error">RulesModel(&quot;Exceptions&quot;, &quot;Rules in this rule set report issues related to how code throws and handles Exceptions&quot;, &quot;https://detekt.github.io/detekt/exceptions.html&quot;)</span>,
+<span class="lineno">  43 </span>    RulesModel(&quot;Formatting&quot;, &quot;This rule set provides wrappers for rules implemented by ktlint - https://ktlint.github.io/.e&quot;,&quot;https://detekt.github.io/detekt/formatting.html&quot;),
+<span class="lineno">  44 </span>    RulesModel(&quot;Naming&quot;, &quot;The naming ruleset contains rules which assert the naming of different parts of the codebase.&quot;, &quot;https://detekt.github.io/detekt/naming.html&quot;),
+<span class="lineno">  45 </span>    RulesModel(&quot;Performance&quot;, &quot;The performance rule set analyzes code for potential performance problems.&quot;,&quot;https://detekt.github.io/detekt/performance.html&quot;),
+</code></pre>
+      </li>
+      <li><span class="location">/home/juanfgs/src/kotlin/starter/app/src/main/java/com/raywenderlich/android/detektsampleapp/DetektRules.kt:43:5</span><span class="message">Line detected that is longer than the defined maximum line length in the code style.</span>
+        <pre><code><span class="lineno">  40 </span>    RulesModel(&quot;Coroutines&quot;, &quot;The coroutines rule set analyzes code for potential coroutines problems.&quot;, &quot;https://detekt.github.io/detekt/coroutines.html&quot;),
+<span class="lineno">  41 </span>    RulesModel(&quot;Empty-Blocks&quot;, &quot;The empty-blocks ruleset contains rules that will report empty blocks of code which should be avoided.&quot;,&quot;https://detekt.github.io/detekt/empty-blocks.html&quot;),
+<span class="lineno">  42 </span>    RulesModel(&quot;Exceptions&quot;, &quot;Rules in this rule set report issues related to how code throws and handles Exceptions&quot;, &quot;https://detekt.github.io/detekt/exceptions.html&quot;),
+<span class="lineno">  43 </span>    <span class="error">RulesModel(&quot;Formatting&quot;, &quot;This rule set provides wrappers for rules implemented by ktlint - https://ktlint.github.io/.e&quot;,&quot;https://detekt.github.io/detekt/formatting.html&quot;)</span>,
+<span class="lineno">  44 </span>    RulesModel(&quot;Naming&quot;, &quot;The naming ruleset contains rules which assert the naming of different parts of the codebase.&quot;, &quot;https://detekt.github.io/detekt/naming.html&quot;),
+<span class="lineno">  45 </span>    RulesModel(&quot;Performance&quot;, &quot;The performance rule set analyzes code for potential performance problems.&quot;,&quot;https://detekt.github.io/detekt/performance.html&quot;),
+<span class="lineno">  46 </span>    RulesModel(&quot;Potential-Bugs&quot;, &quot;The potential-bugs rule set provides rules that detect potential bugs.&quot;, &quot;https://detekt.github.io/detekt/potential-bugs.html&quot;),
+</code></pre>
+      </li>
+      <li><span class="location">/home/juanfgs/src/kotlin/starter/app/src/main/java/com/raywenderlich/android/detektsampleapp/DetektRules.kt:44:5</span><span class="message">Line detected that is longer than the defined maximum line length in the code style.</span>
+        <pre><code><span class="lineno">  41 </span>    RulesModel(&quot;Empty-Blocks&quot;, &quot;The empty-blocks ruleset contains rules that will report empty blocks of code which should be avoided.&quot;,&quot;https://detekt.github.io/detekt/empty-blocks.html&quot;),
+<span class="lineno">  42 </span>    RulesModel(&quot;Exceptions&quot;, &quot;Rules in this rule set report issues related to how code throws and handles Exceptions&quot;, &quot;https://detekt.github.io/detekt/exceptions.html&quot;),
+<span class="lineno">  43 </span>    RulesModel(&quot;Formatting&quot;, &quot;This rule set provides wrappers for rules implemented by ktlint - https://ktlint.github.io/.e&quot;,&quot;https://detekt.github.io/detekt/formatting.html&quot;),
+<span class="lineno">  44 </span>    <span class="error">RulesModel(&quot;Naming&quot;, &quot;The naming ruleset contains rules which assert the naming of different parts of the codebase.&quot;, &quot;https://detekt.github.io/detekt/naming.html&quot;)</span>,
+<span class="lineno">  45 </span>    RulesModel(&quot;Performance&quot;, &quot;The performance rule set analyzes code for potential performance problems.&quot;,&quot;https://detekt.github.io/detekt/performance.html&quot;),
+<span class="lineno">  46 </span>    RulesModel(&quot;Potential-Bugs&quot;, &quot;The potential-bugs rule set provides rules that detect potential bugs.&quot;, &quot;https://detekt.github.io/detekt/potential-bugs.html&quot;),
+<span class="lineno">  47 </span>    RulesModel(&quot;Class Ordering&quot;, &quot;The Style ruleset provides rules that assert the style of the code. This will help keep code in line with the given code style guidelines&quot;, &quot;https://detekt.github.io/detekt/style.html&quot;),
+</code></pre>
+      </li>
+      <li><span class="location">/home/juanfgs/src/kotlin/starter/app/src/main/java/com/raywenderlich/android/detektsampleapp/DetektRules.kt:45:5</span><span class="message">Line detected that is longer than the defined maximum line length in the code style.</span>
+        <pre><code><span class="lineno">  42 </span>    RulesModel(&quot;Exceptions&quot;, &quot;Rules in this rule set report issues related to how code throws and handles Exceptions&quot;, &quot;https://detekt.github.io/detekt/exceptions.html&quot;),
+<span class="lineno">  43 </span>    RulesModel(&quot;Formatting&quot;, &quot;This rule set provides wrappers for rules implemented by ktlint - https://ktlint.github.io/.e&quot;,&quot;https://detekt.github.io/detekt/formatting.html&quot;),
+<span class="lineno">  44 </span>    RulesModel(&quot;Naming&quot;, &quot;The naming ruleset contains rules which assert the naming of different parts of the codebase.&quot;, &quot;https://detekt.github.io/detekt/naming.html&quot;),
+<span class="lineno">  45 </span>    <span class="error">RulesModel(&quot;Performance&quot;, &quot;The performance rule set analyzes code for potential performance problems.&quot;,&quot;https://detekt.github.io/detekt/performance.html&quot;)</span>,
+<span class="lineno">  46 </span>    RulesModel(&quot;Potential-Bugs&quot;, &quot;The potential-bugs rule set provides rules that detect potential bugs.&quot;, &quot;https://detekt.github.io/detekt/potential-bugs.html&quot;),
+<span class="lineno">  47 </span>    RulesModel(&quot;Class Ordering&quot;, &quot;The Style ruleset provides rules that assert the style of the code. This will help keep code in line with the given code style guidelines&quot;, &quot;https://detekt.github.io/detekt/style.html&quot;),
+<span class="lineno">  48 </span>)
+</code></pre>
+      </li>
+      <li><span class="location">/home/juanfgs/src/kotlin/starter/app/src/main/java/com/raywenderlich/android/detektsampleapp/DetektRules.kt:46:5</span><span class="message">Line detected that is longer than the defined maximum line length in the code style.</span>
+        <pre><code><span class="lineno">  43 </span>    RulesModel(&quot;Formatting&quot;, &quot;This rule set provides wrappers for rules implemented by ktlint - https://ktlint.github.io/.e&quot;,&quot;https://detekt.github.io/detekt/formatting.html&quot;),
+<span class="lineno">  44 </span>    RulesModel(&quot;Naming&quot;, &quot;The naming ruleset contains rules which assert the naming of different parts of the codebase.&quot;, &quot;https://detekt.github.io/detekt/naming.html&quot;),
+<span class="lineno">  45 </span>    RulesModel(&quot;Performance&quot;, &quot;The performance rule set analyzes code for potential performance problems.&quot;,&quot;https://detekt.github.io/detekt/performance.html&quot;),
+<span class="lineno">  46 </span>    <span class="error">RulesModel(&quot;Potential-Bugs&quot;, &quot;The potential-bugs rule set provides rules that detect potential bugs.&quot;, &quot;https://detekt.github.io/detekt/potential-bugs.html&quot;)</span>,
+<span class="lineno">  47 </span>    RulesModel(&quot;Class Ordering&quot;, &quot;The Style ruleset provides rules that assert the style of the code. This will help keep code in line with the given code style guidelines&quot;, &quot;https://detekt.github.io/detekt/style.html&quot;),
+<span class="lineno">  48 </span>)
+</code></pre>
+      </li>
+      <li><span class="location">/home/juanfgs/src/kotlin/starter/app/src/main/java/com/raywenderlich/android/detektsampleapp/DetektRules.kt:47:5</span><span class="message">Line detected that is longer than the defined maximum line length in the code style.</span>
+        <pre><code><span class="lineno">  44 </span>    RulesModel(&quot;Naming&quot;, &quot;The naming ruleset contains rules which assert the naming of different parts of the codebase.&quot;, &quot;https://detekt.github.io/detekt/naming.html&quot;),
+<span class="lineno">  45 </span>    RulesModel(&quot;Performance&quot;, &quot;The performance rule set analyzes code for potential performance problems.&quot;,&quot;https://detekt.github.io/detekt/performance.html&quot;),
+<span class="lineno">  46 </span>    RulesModel(&quot;Potential-Bugs&quot;, &quot;The potential-bugs rule set provides rules that detect potential bugs.&quot;, &quot;https://detekt.github.io/detekt/potential-bugs.html&quot;),
+<span class="lineno">  47 </span>    <span class="error">RulesModel(&quot;Class Ordering&quot;, &quot;The Style ruleset provides rules that assert the style of the code. This will help keep code in line with the given code style guidelines&quot;, &quot;https://detekt.github.io/detekt/style.html&quot;)</span>,
+<span class="lineno">  48 </span>)
+</code></pre>
+      </li>
+      <li><span class="location">/home/juanfgs/src/kotlin/starter/app/src/main/java/com/raywenderlich/android/detektsampleapp/RulesAdapter.kt:46:1</span><span class="message">Line detected that is longer than the defined maximum line length in the code style.</span>
+        <pre><code><span class="lineno">  43 </span>
+<span class="lineno">  44 </span>typealias OnRuleClick = (RulesModel) -&gt; Unit
+<span class="lineno">  45 </span>
+<span class="lineno">  46 </span><span class="error">class</span> RulesAdapter(private val onRuleClick: OnRuleClick) : ListAdapter&lt;RulesModel, RulesAdapter.RulesViewHolder&gt;(RulesDiffUtil) {
+<span class="lineno">  47 </span>
+<span class="lineno">  48 </span>  class RulesViewHolder(private val binding: RuleListItemBinding, private val onRuleClick: OnRuleClick) : RecyclerView.ViewHolder(binding.root) {
+<span class="lineno">  49 </span>
+</code></pre>
+      </li>
+      <li><span class="location">/home/juanfgs/src/kotlin/starter/app/src/main/java/com/raywenderlich/android/detektsampleapp/RulesAdapter.kt:48:3</span><span class="message">Line detected that is longer than the defined maximum line length in the code style.</span>
+        <pre><code><span class="lineno">  45 </span>
+<span class="lineno">  46 </span>class RulesAdapter(private val onRuleClick: OnRuleClick) : ListAdapter&lt;RulesModel, RulesAdapter.RulesViewHolder&gt;(RulesDiffUtil) {
+<span class="lineno">  47 </span>
+<span class="lineno">  48 </span>  <span class="error">class</span> RulesViewHolder(private val binding: RuleListItemBinding, private val onRuleClick: OnRuleClick) : RecyclerView.ViewHolder(binding.root) {
+<span class="lineno">  49 </span>
+<span class="lineno">  50 </span>    fun bind(rulesModel: RulesModel) {
+<span class="lineno">  51 </span>      binding.tvRuleTitle.text = rulesModel.name
+</code></pre>
+      </li>
+    </ul>
+  </details>
+  <details id="NewLineAtEndOfFile" open="open">
+    <summary class="rule-container"><span class="rule">NewLineAtEndOfFile: 4 </span><span class="description">Checks whether files end with a line separator.</span></summary>
+    <ul>
+      <li><span class="location">/home/juanfgs/src/kotlin/starter/app/src/main/java/com/raywenderlich/android/detektsampleapp/DetektRules.kt:35:1</span><span class="message">The file /home/juanfgs/src/kotlin/starter/app/src/main/java/com/raywenderlich/android/detektsampleapp/DetektRules.kt is not ending with a new line.</span>
+        <pre><code><span class="lineno">  32 </span> * THE SOFTWARE.
+<span class="lineno">  33 </span> */
+<span class="lineno">  34 </span>
+<span class="lineno">  35 </span><span class="error">package com.raywenderlich.android.detektsampleapp</span>
+<span class="lineno">  36 </span>
+<span class="lineno">  37 </span>val detektRules = listOf(
+<span class="lineno">  38 </span>    RulesModel(&quot;Comments&quot;, &quot;This rule set provides rules that address issues in comments and documentation of the code&quot;, &quot;https://detekt.github.io/detekt/comments.html&quot;),
+</code></pre>
+      </li>
+      <li><span class="location">/home/juanfgs/src/kotlin/starter/app/src/main/java/com/raywenderlich/android/detektsampleapp/RulesAdapter.kt:35:1</span><span class="message">The file /home/juanfgs/src/kotlin/starter/app/src/main/java/com/raywenderlich/android/detektsampleapp/RulesAdapter.kt is not ending with a new line.</span>
+        <pre><code><span class="lineno">  32 </span> * THE SOFTWARE.
+<span class="lineno">  33 </span> */
+<span class="lineno">  34 </span>
+<span class="lineno">  35 </span><span class="error">package com.raywenderlich.android.detektsampleapp</span>
+<span class="lineno">  36 </span>
+<span class="lineno">  37 </span>import android.view.LayoutInflater
+<span class="lineno">  38 </span>import android.view.ViewGroup
+</code></pre>
+      </li>
+      <li><span class="location">/home/juanfgs/src/kotlin/starter/app/src/main/java/com/raywenderlich/android/detektsampleapp/RulesWebViewActivity.kt:35:1</span><span class="message">The file /home/juanfgs/src/kotlin/starter/app/src/main/java/com/raywenderlich/android/detektsampleapp/RulesWebViewActivity.kt is not ending with a new line.</span>
+        <pre><code><span class="lineno">  32 </span> * THE SOFTWARE.
+<span class="lineno">  33 </span> */
+<span class="lineno">  34 </span>
+<span class="lineno">  35 </span><span class="error">package com.raywenderlich.android.detektsampleapp</span>
+<span class="lineno">  36 </span>
+<span class="lineno">  37 </span>import android.os.Bundle
+<span class="lineno">  38 </span>import android.webkit.WebView
+</code></pre>
+      </li>
+      <li><span class="location">/home/juanfgs/src/kotlin/starter/app/src/main/java/com/raywenderlich/android/detektsampleapp/SyntheticRuleActivity.kt:35:1</span><span class="message">The file /home/juanfgs/src/kotlin/starter/app/src/main/java/com/raywenderlich/android/detektsampleapp/SyntheticRuleActivity.kt is not ending with a new line.</span>
+        <pre><code><span class="lineno">  32 </span> * THE SOFTWARE.
+<span class="lineno">  33 </span> */
+<span class="lineno">  34 </span>
+<span class="lineno">  35 </span><span class="error">package com.raywenderlich.android.detektsampleapp</span>
+<span class="lineno">  36 </span>
+<span class="lineno">  37 </span>import android.os.Bundle
+<span class="lineno">  38 </span>import android.os.PersistableBundle
+</code></pre>
+      </li>
+    </ul>
+  </details>
+</div>
+
+
+generated with <a href="https://detekt.github.io/">detekt version 1.17.1</a> on 2022-04-08 14:44:29 UTC.
+
+</body>
+</html>
