@@ -53,7 +53,11 @@ class MainActivity : AppCompatActivity() {
 
 
   }
-
+  private suspend fun coroutineTestRules() {
+    GlobalScope.launch {
+      delay(2000)
+    }
+  }
   override fun onCreate(savedInstanceState: Bundle?) {
     // Switch to AppTheme for displaying the activity
     setTheme(R.style.AppTheme)
@@ -64,7 +68,7 @@ class MainActivity : AppCompatActivity() {
 
     initView()
 
-    // TODO 6 : Add a call to coroutineTestRule function
+    runBlocking { coroutineTestRules() }
   }
 
   // TODO 5 : Add the coroutineTestRule function
